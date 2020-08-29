@@ -22,3 +22,4 @@ class Solution:
                         let[i] = let[j]
                         let[j] = tmp
         return let + dig
+
