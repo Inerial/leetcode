@@ -6,6 +6,8 @@ class Solution:
                 strs.append(c.lower())
         return strs == list(reversed(strs))
 
+
+        
 from collections import deque
 class Solution:
     def isPalindrome(self, s: str) -> bool:
@@ -17,5 +19,3 @@ class Solution:
             if strs.popleft() != strs.pop():
                 return False
         return True
-
-
