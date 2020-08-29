@@ -5,25 +5,37 @@
 #         self.next = next
 
 
-## O(n)time, not O(1) space
-import time
+# class Solution:
+#     def isPalindrome(self, head: ListNode) -> bool:
+#         if head is None:
+#             return True
+#         ans = []
+#         while head.next is not None:
+#             ans.append(head.val)
+#             head = head.next
+#         ans.append(head.val)
+        
+#         return ans == list(reversed(ans))
+
+    
+from collections import deque
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        now = time.time()
         
         if head is None:
             return True
-        ans = []
+        ans = deque()
         while head.next is not None:
             ans.append(head.val)
             head = head.next
         ans.append(head.val)
         
-        print(time.time() - now)
-        return ans == list(reversed(ans))
-
-
-# ## O(n)time, O(1) space인지도 확실하지 않음
+        while len(ans) > 1:
+            if ans.popleft() != ans.pop():
+                return False
+        return True
+    
+    
 # ## 중간 reverse부분에서 쓰지도 않은 head가 증발
 # import time
 # class Solution:
