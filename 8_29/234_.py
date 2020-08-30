@@ -15,7 +15,7 @@
 #             head = head.next
 #         ans.append(head.val)
         
-#         return ans == list(reversed(ans))
+#         return ans == list(reversed(ans))in
 
     
 from collections import deque
